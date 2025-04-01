@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="NewFile.css">
 </head>
 <body>
-
+<header>
+<h1>Miguel Altuna DB - by SinTaxError</h1>
+</header>
 <div class="login-container">
         <h2>Login</h2>
         <form action=second.jsp method="post">
