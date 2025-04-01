@@ -1,11 +1,11 @@
-
+// Creado el 19/06/20
 public class Eraikina {
     int idEraikina;
     String izenLuzea;
     String izenLaburra;
     String helbidea;
     String postaKodea;
-
+//konstruktorea
     public Eraikina(int idEraikina, String izenLuzea, String izenLaburra, String helbidea, String postaKodea) {
         this.idEraikina = idEraikina;
         this.izenLuzea = izenLuzea;
@@ -13,7 +13,7 @@ public class Eraikina {
         this.helbidea = helbidea;
         this.postaKodea = postaKodea;
     }
-    
+    //getters eta setters
     public int getIdEraikina() {
         return idEraikina;
     }
@@ -45,3 +45,5 @@ public class Eraikina {
         this.postaKodea = postaKodea;
     }
 }
+
+
