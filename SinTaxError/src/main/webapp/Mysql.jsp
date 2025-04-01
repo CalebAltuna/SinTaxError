@@ -32,7 +32,6 @@ try{
 	
 	rst = stm.executeQuery(sententzia);
 
-
 %>
 
 <table>
