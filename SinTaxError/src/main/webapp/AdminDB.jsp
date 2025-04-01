@@ -8,6 +8,16 @@
 <title>SinTaxError DB</title>
 </head>
 <body>
+<header>
+<ul>
+	<a href="Login.jsp">Login</a>
+	<a href="AdminDB.jsp">AdminDB</a>
+	<a href="UserDB.jsp">UserDB</a>
+</ul>
+
+</header>
 <h1>AdminDB VIEW</h1>
+	<footer>
+		<a href="Login.jsp">Login</a>
 </body>
 </html>
