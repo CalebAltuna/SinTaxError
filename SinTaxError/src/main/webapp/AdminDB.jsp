@@ -17,7 +17,9 @@
 
 </header>
 <h1>AdminDB VIEW</h1>
-	<footer>
-		<a href="Login.jsp">Login</a>
+<footer>
+<p>By SinTaxError</p>
+<p>@Miguel Altuna 2025</p>
+</footer>
 </body>
 </html>

@@ -51,5 +51,15 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    outline: 1px black;
+outline: 2px solid black; /* Added outline */
+}
+foote {
+		background: #007BFF;
+			color: white;
+			padding: 10px 0;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			z-index: 1000;
 }
