@@ -52,7 +52,7 @@ header {
     width: 100%;
     z-index: 1000;
 outline: 2px solid black; /* Added outline */
-background-image: url("C:\Users\web24cvalls\Downloads\headerPNG.png");
+background-image: url("file:///C:/Users/web24cvalls/Downloads/headerPNG.png");
 }
 footer {
 		background: #007BFF;
