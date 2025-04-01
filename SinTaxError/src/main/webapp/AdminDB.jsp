@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="NewFile.css">
 <meta charset="UTF-8">
 <title>SinTaxError</title>
 </head>
