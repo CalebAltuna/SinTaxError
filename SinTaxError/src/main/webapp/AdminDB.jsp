@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="NewFile.css">
 <meta charset="UTF-8">
-<title>SinTaxError</title>
+<title>SinTaxError DB</title>
 </head>
 <body>
 <h1>AdminDB VIEW</h1>
