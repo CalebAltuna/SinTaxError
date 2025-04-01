@@ -63,4 +63,5 @@ footer {
 			bottom: 0;
 			width: 100%;
 			z-index: 1000;
+			outline: 2px solid black; /* Added outline */
 }
