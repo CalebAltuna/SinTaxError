@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>LogIn</title>
 <link rel="stylesheet" href="NewFile.css">
 </head>
 <body>
