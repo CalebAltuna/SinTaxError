@@ -53,7 +53,7 @@ header {
     z-index: 1000;
 outline: 2px solid black; /* Added outline */
 }
-foote {
+footer {
 		background: #007BFF;
 			color: white;
 			padding: 10px 0;
