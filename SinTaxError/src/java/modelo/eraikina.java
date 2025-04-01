@@ -13,7 +13,6 @@ public class Eraikina {
         this.helbidea = helbidea;
         this.postaKodea = postaKodea;
     }
-
     
     public int getIdEraikina() {
         return idEraikina;

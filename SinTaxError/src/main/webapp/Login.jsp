@@ -22,5 +22,6 @@
 	<footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>
+	</footer>
 </body>
 </html>
