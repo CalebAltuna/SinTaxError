@@ -19,5 +19,8 @@
             <button type="submit">Ingresar</button>
         </form>
     </div>
+	<footer>
+		<p>By SinTaxError</p>
+		<p>@Miguel Altuna 2025</p>
 </body>
 </html>
