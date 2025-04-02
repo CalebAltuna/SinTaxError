@@ -1,6 +1,11 @@
 package controlador;
 
+import java.io.IOException;
+
 import Modeloa.Erabiltzaileak;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class erabiltzaileakServlet {
 	public boolean loginTry(Erabiltzaileak erabiltzailea) {
@@ -15,4 +20,16 @@ public class erabiltzaileakServlet {
 		}
 		return vuelta;
 	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String nombreUsuario = request.getParameter("name");
+		String password = request.getParameter("password");
+		
+		Erabiltzaileak erabiltzailea = new Erabiltzaileak(nombreUsuario, password);
+		
+		if(recogerdatos(erabiltzailea)) {
+			response.sendRedirect("login.jsp");
+		}else {
+			response.sendRedirect("try.jsp");
+		}
 }
