@@ -36,15 +36,11 @@ public class erabiltzaileakServlet {
         String nombreUsuario = request.getParameter("name");
         String password = request.getParameter("password");
 
-        logger.log(Level.INFO, "Attempting login for user: {0}", nombreUsuario);
-
         erabiltzaileak erabiltzailea = new erabiltzaileak(nombreUsuario, password);
 
         if (recogerDatos(erabiltzailea)) {
-            logger.log(Level.INFO, "Login successful for user: {0}", nombreUsuario);
             response.sendRedirect("AdminDB.jsp");
         } else {
-            logger.log(Level.WARNING, "Login failed for user: {0}", nombreUsuario);
             response.sendRedirect("try.jsp");
         }
     }
