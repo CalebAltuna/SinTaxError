@@ -1,4 +1,6 @@
 // Creado el 19/06/20
+package modelo;
+
 public class Eraikina {
     int idEraikina;
     String izenLuzea;

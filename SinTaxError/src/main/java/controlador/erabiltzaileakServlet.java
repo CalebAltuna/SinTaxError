@@ -2,7 +2,9 @@
 package controlador;
 
 import java.io.IOException;
-import Modeloa.Erabiltzaileak;
+
+import modelo.ErabiltzaileakDAO;
+import modelo.erabiltzaileak;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,10 +14,10 @@ import java.util.logging.Logger;
 public class erabiltzaileakServlet {
     private static final Logger logger = Logger.getLogger(erabiltzaileakServlet.class.getName());
 
-    public boolean recogerDatos(Erabiltzaileak erabiltzailea) {
+    public boolean recogerDatos(erabiltzaileak erabiltzailea) {
         boolean vuelta = false;
         try {
-            String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
+            String nombreBD = ErabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
             String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
 
             if (erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPassword().equals(passwordBD)) {
@@ -37,7 +39,7 @@ public class erabiltzaileakServlet {
 
         logger.log(Level.INFO, "Attempting login for user: {0}", nombreUsuario);
 
-        Erabiltzaileak erabiltzailea = new Erabiltzaileak(nombreUsuario, password);
+        erabiltzaileak erabiltzailea = new erabiltzaileak(nombreUsuario, password);
 
         if (recogerDatos(erabiltzailea)) {
             logger.log(Level.INFO, "Login successful for user: {0}", nombreUsuario);
