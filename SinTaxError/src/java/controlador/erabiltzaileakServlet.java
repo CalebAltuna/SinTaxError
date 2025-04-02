@@ -1,43 +1,50 @@
+
 package controlador;
 
 import java.io.IOException;
-
 import Modeloa.Erabiltzaileak;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class erabiltzaileakServlet {
-	public boolean recogerDatos(Erabiltzaileak erabiltzailea) {
-	    boolean vuelta = false;
-	    try {
-	        String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
-	        String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
-	
-	        if (erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPassword().equals(passwordBD)) {
-	            vuelta = true;
-	        }
-	    } catch (NullPointerException e) {
-	        System.err.println("NullPointerException: " + e.getMessage());
-	        vuelta = false;
-	    } catch (Exception e) {
-	        System.err.println("Exception: " + e.getMessage());
-	        vuelta = false;
-	    }
-	    return vuelta;
-	}
+    private static final Logger logger = Logger.getLogger(erabiltzaileakServlet.class.getName());
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nombreUsuario = request.getParameter("name");
-		String password = request.getParameter("password");
-		
-		Erabiltzaileak erabiltzailea = new Erabiltzaileak(nombreUsuario, password);
-		
-		if(recogerdatos(erabiltzailea)) {
-			response.sendRedirect("login.jsp");
-		}else {
-			response.sendRedirect("try.jsp");
-		}
-	}//endMethod
+    public boolean recogerDatos(Erabiltzaileak erabiltzailea) {
+        boolean vuelta = false;
+        try {
+            String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
+            String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
+
+            if (erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPassword().equals(passwordBD)) {
+                vuelta = true;
+            }
+        } catch (NullPointerException e) {
+            logger.log(Level.SEVERE, "NullPointerException: {0}", e.getMessage());
+            vuelta = false;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Exception: {0}", e.getMessage());
+            vuelta = false;
+        }
+        return vuelta;
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nombreUsuario = request.getParameter("name");
+        String password = request.getParameter("password");
+
+        logger.log(Level.INFO, "Attempting login for user: {0}", nombreUsuario);
+
+        Erabiltzaileak erabiltzailea = new Erabiltzaileak(nombreUsuario, password);
+
+        if (recogerDatos(erabiltzailea)) {
+            logger.log(Level.INFO, "Login successful for user: {0}", nombreUsuario);
+            response.sendRedirect("login.jsp");
+        } else {
+            logger.log(Level.WARNING, "Login failed for user: {0}", nombreUsuario);
+            response.sendRedirect("try.jsp");
+        }
+    }
 }
