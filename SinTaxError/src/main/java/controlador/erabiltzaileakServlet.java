@@ -42,7 +42,7 @@ public class erabiltzaileakServlet {
 
         if (recogerDatos(erabiltzailea)) {
             logger.log(Level.INFO, "Login successful for user: {0}", nombreUsuario);
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("AdminDB.jsp");
         } else {
             logger.log(Level.WARNING, "Login failed for user: {0}", nombreUsuario);
             response.sendRedirect("try.jsp");
