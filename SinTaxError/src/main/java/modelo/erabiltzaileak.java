@@ -1,10 +1,10 @@
 package modelo;
 
-public class Erabiltzaileak {
+public class erabiltzaileak {
 	String izena, gmail,password;
 	int id;
 	
-	public Erabiltzaileak(String izena, String gmail, String password, int id) {
+	public erabiltzaileak(String izena, String gmail, String password, int id) {
 		super();
 		this.izena = izena;
 		this.gmail = gmail;
@@ -12,21 +12,21 @@ public class Erabiltzaileak {
 		this.id = id;
 	}
 	
-	public Erabiltzaileak(String izena, String gmail, String password) {
+	public erabiltzaileak(String izena, String gmail, String password) {
 		super();
 		this.izena = izena;
 		this.gmail = gmail;
 		this.password = password;
 	}
 	
-	public Erabiltzaileak(String izena, String gmail, int id) {
+	public erabiltzaileak(String izena, String gmail, int id) {
 		super();
 		this.izena = izena;
 		this.gmail = gmail;
 		this.id = id;
 	}
 	
-	public Erabiltzaileak(String izena, String password) {
+	public erabiltzaileak(String izena, String password) {
 		super();
 		this.izena = izena;
 		this.password = password;

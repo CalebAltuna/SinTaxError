@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-public class ErabiltzaileakDAO {
+public class erabiltzaileakDAO {
 
-    public ErabiltzaileakDAO() {
+    public erabiltzaileakDAO() {
     }
 
-    public void insertErabiltzaileak(Erabiltzaileak e) {
+    public void insertErabiltzaileak(erabiltzaileak e) {
         try {
             Connection conn = DBconnection.getConnection();
             String sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";
@@ -39,15 +39,15 @@ public class ErabiltzaileakDAO {
         }
     }
 
-    ArrayList<Erabiltzaileak> selectErabiltzaileak() {
-        ArrayList<Erabiltzaileak> erabiltzaileak = new ArrayList<>();
+    ArrayList<erabiltzaileak> selectErabiltzaileak() {
+        ArrayList<erabiltzaileak> erabiltzaileak = new ArrayList<>();
         try {
             Connection conn = DBconnection.getConnection();
             String sqlSententzia = "SELECT * from securedb.usuarios";
             PreparedStatement pst = conn.prepareStatement(sqlSententzia);
             ResultSet rst = pst.executeQuery();
             while (rst.next()) {
-                Erabiltzaileak e1 = new Erabiltzaileak(rst.getString(1), rst.getString(2), rst.getString(3));
+                erabiltzaileak e1 = new erabiltzaileak(rst.getString(1), rst.getString(2), rst.getString(3));
                 erabiltzaileak.add(e1);
             }
             DBconnection.desConnection();
@@ -57,7 +57,7 @@ public class ErabiltzaileakDAO {
         return erabiltzaileak;
     }
 
-    public void updateErabiltzailea(Erabiltzaileak erabiltzailea) {
+    public void updateErabiltzailea(erabiltzaileak erabiltzailea) {
         try {
             Connection conn = DBconnection.getConnection();
             String sqlSententzia = "update erabiltzaileak set nombre = ?, gmail = ?,password = ? ";
@@ -72,7 +72,7 @@ public class ErabiltzaileakDAO {
         }
     }
 
-    public String devolverNombreBaseDeDatos(String nombreBuscado) {
+    public static String devolverNombreBaseDeDatos(String nombreBuscado) {
         String nombreEncontrado = null;
         try {
             Connection conn = DBconnection.getConnection();
@@ -92,7 +92,7 @@ public class ErabiltzaileakDAO {
         return nombreEncontrado;
     }
 
-    public String devolverPasswordBaseDeDatos(String nombreUsuario) {
+    public static String devolverPasswordBaseDeDatos(String nombreUsuario) {
         String password = null;
         try {
             Connection conn = DBconnection.getConnection();
