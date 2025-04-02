@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<img src=".../.../media/img/icon.png">
+<img src="${pageContext.request.contextPath}/media/img/icon.png" alt="Icon">
 </header>
 <div class="login-container">
         <h2>Login</h2>
