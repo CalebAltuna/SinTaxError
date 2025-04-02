@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<img src="${pageContext.request.contextPath}/media/img/icon.png" alt="Icon">
+<img src="/SinTaxError/media/img/icon.png">
 </header>
 <div class="login-container">
         <h2>Login</h2>
