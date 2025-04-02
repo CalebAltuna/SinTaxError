@@ -72,7 +72,7 @@ public class erabiltzaileakDAO {
         }
     }
 
-    public String devolverNombreBaseDeDatos(String nombreBuscado) {
+    public static String devolverNombreBaseDeDatos(String nombreBuscado) {
         String nombreEncontrado = null;
         try {
             Connection conn = DBconnection.getConnection();
@@ -92,7 +92,7 @@ public class erabiltzaileakDAO {
         return nombreEncontrado;
     }
 
-    public String devolverPasswordBaseDeDatos(String nombreUsuario) {
+    public static String devolverPasswordBaseDeDatos(String nombreUsuario) {
         String password = null;
         try {
             Connection conn = DBconnection.getConnection();
