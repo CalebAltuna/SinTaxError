@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-public class ErabiltzaileakDAO {
+public class erabiltzaileakDAO {
 
-    public ErabiltzaileakDAO() {
+    public erabiltzaileakDAO() {
     }
 
     public void insertErabiltzaileak(erabiltzaileak e) {

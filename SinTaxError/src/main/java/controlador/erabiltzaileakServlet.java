@@ -1,9 +1,8 @@
-
 package controlador;
 
 import java.io.IOException;
 
-import modelo.ErabiltzaileakDAO;
+import modelo.erabiltzaileakDAO;
 import modelo.erabiltzaileak;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ public class erabiltzaileakServlet {
     public boolean recogerDatos(erabiltzaileak erabiltzailea) {
         boolean vuelta = false;
         try {
-            String nombreBD = ErabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
+            String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
             String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
 
             if (erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPassword().equals(passwordBD)) {
