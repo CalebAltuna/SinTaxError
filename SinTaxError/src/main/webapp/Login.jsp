@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<img src="../../media/img/icon.png">
+<img src=".../.../media/img/icon.png">
 </header>
 <div class="login-container">
         <h2>Login</h2>
