@@ -125,7 +125,7 @@ public class ErabiltzaileakDAO {
 	    } catch(Exception e) {
 	        System.out.println("ERROR: "+e.getMessage());
 	    } finally {
-	        Konexioa.deskonektatu();
+	        DBconnection.deskonektatu();
 	    }
 	    
 	    return password;
