@@ -17,7 +17,7 @@ public class erabiltzaileakServlet {
         boolean vuelta = false;
         try {
             String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
-            String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
+            String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getPassword());
 
             if (erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPassword().equals(passwordBD)) {
                 vuelta = true;
