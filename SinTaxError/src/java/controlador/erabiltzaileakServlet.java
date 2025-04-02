@@ -28,7 +28,7 @@ public class erabiltzaileakServlet {
 		Erabiltzaileak erabiltzailea = new Erabiltzaileak(nombreUsuario, password);
 		
 		if(recogerdatos(erabiltzailea)) {
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("AdminDB.jsp");
 		}else {
 			response.sendRedirect("try.jsp");
 		}
