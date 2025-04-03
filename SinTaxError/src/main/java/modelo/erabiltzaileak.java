@@ -56,15 +56,11 @@ public class erabiltzaileak {
 	public void setPasahitza(String password) {
 		this.pasahitza = password;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
 	
 }//endClass
