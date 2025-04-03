@@ -18,7 +18,7 @@ public class erabiltzaileakDAO {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, e.getIzena());
             pst.setString(2, e.getGmail());
-            pst.setString(3, e.getPassword());
+            pst.setString(3, e.getPasahitza());
 
             pst.execute();
             DBconnection.desConnection();
@@ -64,7 +64,7 @@ public class erabiltzaileakDAO {
             PreparedStatement pst = conn.prepareStatement(sqlSententzia);
             pst.setString(1, erabiltzailea.getIzena());
             pst.setString(2, erabiltzailea.getGmail());
-            pst.setString(3, erabiltzailea.getPassword());
+            pst.setString(3, erabiltzailea.getPasahitza());
             pst.execute();
             DBconnection.desConnection();
         } catch (Exception e) {
@@ -73,7 +73,7 @@ public class erabiltzaileakDAO {
     }
 
     public static String devolverNombreBaseDeDatos(String nombreBuscado) {
-        String nombreEncontrado = null;
+        String izenaOk = null;
         try {
             Connection conn = DBconnection.getConnection();
             String sqlSententzia = "SELECT nombre FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
@@ -81,7 +81,7 @@ public class erabiltzaileakDAO {
             pst.setString(1, nombreBuscado);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
-                nombreEncontrado = rs.getString("nombre");
+                izenaOk = rs.getString("nombre");
             }
             rs.close();
             pst.close();
@@ -89,11 +89,11 @@ public class erabiltzaileakDAO {
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-        return nombreEncontrado;
+        return izenaOk;
     }
 
     public static String devolverPasswordBaseDeDatos(String nombreUsuario) {
-        String password = null;
+        String pasahitza = null;
         try {
             Connection conn = DBconnection.getConnection();
             String sqlSententzia = "SELECT password FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
@@ -101,7 +101,7 @@ public class erabiltzaileakDAO {
             pst.setString(1, nombreUsuario);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
-                password = rs.getString("password");
+                pasahitza = rs.getString("password");
             }
             rs.close();
             pst.close();
@@ -109,6 +109,6 @@ public class erabiltzaileakDAO {
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-        return password;
+        return pasahitza;
     }
 }
