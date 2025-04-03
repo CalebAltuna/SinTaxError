@@ -1,22 +1,22 @@
 package modelo;
 
 public class erabiltzaileak {
-	String izena, gmail,password;
+	String izena, gmail,pasahitza;
 	int id;
 	
 	public erabiltzaileak(String izena, String gmail, String password, int id) {
 		super();
 		this.izena = izena;
 		this.gmail = gmail;
-		this.password = password;
+		this.pasahitza = password;
 		this.id = id;
 	}
-	
+
 	public erabiltzaileak(String izena, String gmail, String password) {
 		super();
 		this.izena = izena;
 		this.gmail = gmail;
-		this.password = password;
+		this.pasahitza = password;
 	}
 	
 	public erabiltzaileak(String izena, String gmail, int id) {
@@ -29,7 +29,7 @@ public class erabiltzaileak {
 	public erabiltzaileak(String izena, String password) {
 		super();
 		this.izena = izena;
-		this.password = password;
+		this.pasahitza = password;
 	}
 
 
@@ -49,19 +49,18 @@ public class erabiltzaileak {
 		this.gmail = gmail;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPasahitza() {
+		return pasahitza;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasahitza(String password) {
+		this.pasahitza = password;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 }//endClass
