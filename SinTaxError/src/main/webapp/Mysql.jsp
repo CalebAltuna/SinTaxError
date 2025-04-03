@@ -39,6 +39,8 @@ try{
 	<tr>
 		<th>ID</th>
 		<th>Izena</th>
+		<th>Email</th>
+		<th>Pasahitza</th>
 	</tr>
 
 <%
