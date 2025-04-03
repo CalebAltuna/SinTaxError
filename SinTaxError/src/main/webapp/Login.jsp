@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<img src="/SinTaxError/media/img/icon.png">
+<img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg">
 </header>
 <div class="login-container">
         <h2>Login</h2>
