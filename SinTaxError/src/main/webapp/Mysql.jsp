@@ -12,8 +12,8 @@
 <%
 
 final String user = "root";
-final String password = "123456789";
-final String datubase_izena = "prueba";
+final String password = "12345678";
+final String datubase_izena = "securedb";
 final String  url = "jdbc:mysql://localhost:3306/"+datubase_izena;
 final String driver = "com.mysql.cj.jdbc.Driver";
 

@@ -1,14 +1,14 @@
 // Creado el 19/06/20
 package modelo;
 
-public class Eraikina {
+public class eraikina {
     int idEraikina;
     String izenLuzea;
     String izenLaburra;
     String helbidea;
     String postaKodea;
 //konstruktorea
-    public Eraikina(int idEraikina, String izenLuzea, String izenLaburra, String helbidea, String postaKodea) {
+    public eraikina(int idEraikina, String izenLuzea, String izenLaburra, String helbidea, String postaKodea) {
         this.idEraikina = idEraikina;
         this.izenLuzea = izenLuzea;
         this.izenLaburra = izenLaburra;
