@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>MySQL konexioa</title>
+<link rel="stylesheet" href="NewFile.css">
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 final String user = "root";
 final String password = "12345678";
 final String datubase_izena = "securedb";
-final String  url = "jdbc:mysql://localhost:3306/"+datubase_izena;
+final String  url = "jdbc:mysql://127.0.0.1:3306/"+datubase_izena;
 final String driver = "com.mysql.cj.jdbc.Driver";
 
 Connection conn = null;
@@ -28,7 +29,7 @@ try{
 	
 	stm = conn.createStatement();
 	
-	String sententzia = "SELECT * FROM prueba.erabiltzaileak";
+	String sententzia = "SELECT * FROM securedb.usuarios";
 	
 	rst = stm.executeQuery(sententzia);
 
@@ -46,7 +47,9 @@ while(rst.next()){
 
 <tr>
 	<td><%= rst.getInt("id") %></td>
-    <td><%= rst.getString("izena") %></td>
+    <td><%= rst.getString("nombre") %></td>
+    <td><%= rst.getString("email") %></td>
+    <td><%= rst.getString("password") %></td>
 </tr>
 
 <%
@@ -62,6 +65,8 @@ catch(Exception e){
 	out.println(e);
 }
 %>
-
+	<footer>
+		<p>By SinTaxError</p>
+		<p>@Miguel Altuna 2025</p>
 </body>
 </html>
