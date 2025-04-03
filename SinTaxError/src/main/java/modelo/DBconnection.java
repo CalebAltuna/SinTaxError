@@ -22,7 +22,6 @@ public class DBconnection {
         }
         return conn;
     }
-
     public static void desConnection() {
         try {
             if (conn != null && !conn.isClosed()) {
@@ -36,5 +35,3 @@ public class DBconnection {
         }
     }
 }
-
-

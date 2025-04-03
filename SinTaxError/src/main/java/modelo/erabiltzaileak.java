@@ -11,7 +11,7 @@ public class erabiltzaileak {
 		this.password = password;
 		this.id = id;
 	}
-	
+
 	public erabiltzaileak(String izena, String gmail, String password) {
 		super();
 		this.izena = izena;
