@@ -3,72 +3,87 @@ package modelo;
 import java.sql.Date;
 
 public class eraikina {
-    int idEraikina;
-    String izenLuzea;
-    String izenLaburra;
-    String helbidea;
-    String postaKodea;
+    int ID_Eraikina;
+    String Izen_Luzea;
+    String izen_Laburra;
+    String Helbidea;
+    String Posta_Kodea;
     Date Sortu_Data;
-
-	public eraikina(int idEraikina, String izenLuzea, String izenLaburra, String helbidea, String postaKodea,
+    
+    
+	public eraikina(int iD_Eraikina, String izen_Luzea, String izen_Laburra, String helbidea, String posta_Kodea,
 			Date sortu_Data) {
 		super();
-		this.idEraikina = idEraikina;
-		this.izenLuzea = izenLuzea;
-		this.izenLaburra = izenLaburra;
-		this.helbidea = helbidea;
-		this.postaKodea = postaKodea;
+		ID_Eraikina = iD_Eraikina;
+		Izen_Luzea = izen_Luzea;
+		this.izen_Laburra = izen_Laburra;
+		Helbidea = helbidea;
+		Posta_Kodea = posta_Kodea;
 		Sortu_Data = sortu_Data;
 	}
 
-	public int getIdEraikina() {
-		return idEraikina;
+
+	public int getID_Eraikina() {
+		return ID_Eraikina;
 	}
 
-	public void setIdEraikina(int idEraikina) {
-		this.idEraikina = idEraikina;
+
+	public void setID_Eraikina(int iD_Eraikina) {
+		ID_Eraikina = iD_Eraikina;
 	}
 
-	public String getIzenLuzea() {
-		return izenLuzea;
+
+	public String getIzen_Luzea() {
+		return Izen_Luzea;
 	}
 
-	public void setIzenLuzea(String izenLuzea) {
-		this.izenLuzea = izenLuzea;
+
+	public void setIzen_Luzea(String izen_Luzea) {
+		Izen_Luzea = izen_Luzea;
 	}
 
-	public String getIzenLaburra() {
-		return izenLaburra;
+
+	public String getIzen_Laburra() {
+		return izen_Laburra;
 	}
 
-	public void setIzenLaburra(String izenLaburra) {
-		this.izenLaburra = izenLaburra;
+
+	public void setIzen_Laburra(String izen_Laburra) {
+		this.izen_Laburra = izen_Laburra;
 	}
+
 
 	public String getHelbidea() {
-		return helbidea;
+		return Helbidea;
 	}
+
 
 	public void setHelbidea(String helbidea) {
-		this.helbidea = helbidea;
+		Helbidea = helbidea;
 	}
 
-	public String getPostaKodea() {
-		return postaKodea;
+
+	public String getPosta_Kodea() {
+		return Posta_Kodea;
 	}
 
-	public void setPostaKodea(String postaKodea) {
-		this.postaKodea = postaKodea;
+
+	public void setPosta_Kodea(String posta_Kodea) {
+		Posta_Kodea = posta_Kodea;
 	}
+
 
 	public Date getSortu_Data() {
 		return Sortu_Data;
 	}
 
+
 	public void setSortu_Data(Date sortu_Data) {
 		Sortu_Data = sortu_Data;
 	}
-
+    
+    
+	
 }
 
 
