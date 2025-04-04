@@ -8,9 +8,9 @@
 </head>
 <body>
 <header>
+<h1>AdminDB VIEW</h1>
 <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg">
 </header>
-<h1>AdminDB VIEW</h1>
 <%@ page import="java.sql.*"%>
 
 <%
@@ -70,6 +70,11 @@ catch(Exception e){
 	out.println(e);
 }
 %>
+
+<button type="button">Crear</button>
+<button type="button">Editar</button>
+<button type="button">Eliminar</button>
+
 	<footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>

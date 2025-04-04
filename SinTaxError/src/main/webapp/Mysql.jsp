@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="NewFile.css">
 </head>
 <body>
+<header>
+<h1>USERDB VIEW</h1>
+<ul>
+    <a href="Login.jsp">Login</a>
+    <a href="AdminDB.jsp">AdminDB</a>
+    <a href="UserDB.jsp">UserDB</a>
+<img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg">
+</header>
 
 <%@ page import="java.sql.*"%>
 
