@@ -41,10 +41,10 @@ public boolean recogerDatos(erabiltzaileak erabiltzailea) {
 }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombreUsuario = request.getParameter("username");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        erabiltzaileak erabiltzailea = new erabiltzaileak(nombreUsuario, password);
+        erabiltzaileak erabiltzailea = new erabiltzaileak(username, password);
 
         if (recogerDatos(erabiltzailea)) {
             response.sendRedirect("AdminDB.jsp");
