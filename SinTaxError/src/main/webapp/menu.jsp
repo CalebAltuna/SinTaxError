@@ -5,13 +5,13 @@
 <head>
 <link rel="stylesheet" href="NewFile.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>menu</title>
 </head>
 <body>
 <header>
 <img src="images/logo.png" alt="Logo" />
 </header>
-
+<h1>NORA NAHI DUZU JOAN</h1>
 <button>Eraikina</button>
 <button>Gela</button>
 <button>Gailua</button>
