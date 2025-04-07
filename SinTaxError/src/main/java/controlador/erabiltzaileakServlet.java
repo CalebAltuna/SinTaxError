@@ -48,7 +48,7 @@ public class erabiltzaileakServlet extends HttpServlet {
         if (recogerDatos(erabiltzaile)) {
             response.sendRedirect("AdminDB1.jsp");
         } else {
-            response.sendRedirect("try.jsp");
+            response.sendRedirect("login.jsp");
         }
     }
 }
