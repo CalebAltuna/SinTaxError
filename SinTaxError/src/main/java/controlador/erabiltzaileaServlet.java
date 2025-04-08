@@ -13,7 +13,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet("/erabiltzaileakServlet")
+@WebServlet("/erabiltzaileaServlet")
+/*
+ * Servlet implementation class erabiltzaileaServlet
+ */
 public class erabiltzaileaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());
@@ -42,19 +45,19 @@ public class erabiltzaileaServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("izena");
-        String password = request.getParameter("pasahitza");
+        String izena = request.getParameter("izena");
+        String pasahitza = request.getParameter("pasahitza");
         String rola = request.getParameter("rola");
         String id = request.getParameter("id");
         int idErabiltzailea = Integer.parseInt(id);
         
-        erabiltzailea erab= new erabiltzailea(idErabiltzailea, username, password, rola);
+        erabiltzailea erab= new erabiltzailea(idErabiltzailea, izena, pasahitza, rola);
 
         if (compararDatos(erab)) {
-            response.sendRedirect("AdminDB1.jsp");
+            response.sendRedirect("SinTaxError/Start/AdminDB1.jsp");
         } else {
             request.setAttribute("error", "Invalid username or password");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SinTaxError/Start/Login.jsp");
             dispatcher.forward(request, response);
         }
     }
