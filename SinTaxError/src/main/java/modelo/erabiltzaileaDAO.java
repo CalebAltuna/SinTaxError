@@ -87,7 +87,7 @@ public class erabiltzaileaDAO {
         String pasahitza = null;
         try {
             Connection conn = DBconnection.connect();
-            String sqlSententzia = "SELECT password FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
+            String sqlSententzia = "SELECT pasahitza FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
             PreparedStatement pst = conn.prepareStatement(sqlSententzia);
             pst.setString(1, sartutakoPasahitza);
             ResultSet rs = pst.executeQuery();
