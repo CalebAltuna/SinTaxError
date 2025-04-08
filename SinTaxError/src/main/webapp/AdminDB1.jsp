@@ -75,8 +75,9 @@ catch(Exception e){
 <button type="button">Editar</button>
 <button type="button">Eliminar</button>
 
-	<footer>
+<footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>
+</footer>
 </body>
 </html>
