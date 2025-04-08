@@ -4,6 +4,7 @@ package controlador;
 import java.io.IOException;
 import modelo.erabiltzaileakDAO;
 import modelo.erabiltzaileak;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -48,7 +49,9 @@ public class erabiltzaileakServlet extends HttpServlet {
         if (recogerDatos(erabiltzaile)) {
             response.sendRedirect("AdminDB1.jsp");
         } else {
-            response.sendRedirect("login.jsp");
+            request.setAttribute("error", "Invalid username or password");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }

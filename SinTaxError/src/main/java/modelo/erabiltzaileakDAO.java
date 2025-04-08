@@ -8,9 +8,6 @@ import java.util.ArrayList;
 
 public class erabiltzaileakDAO {
 
-    public erabiltzaileakDAO() {
-    }
-
     public void insertErabiltzaileak(erabiltzaileak e) {
         try {
             Connection conn = DBconnection.getConnection();
