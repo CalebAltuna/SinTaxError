@@ -5,18 +5,18 @@ import java.sql.Date;
 public class eraikina {
     int ID_Eraikina;
     String Izen_Luzea;
-    String izen_Laburra;
+    String Izen_Laburra;
     String Helbidea;
     String Posta_Kodea;
     Date Sortu_Data;
     
     
-	public eraikina(int iD_Eraikina, String izen_Luzea, String izen_Laburra, String helbidea, String posta_Kodea,
+	public eraikina(int iD_Eraikina, String izen_Luzea, String Izen_Laburra, String helbidea, String posta_Kodea,
 			Date sortu_Data) {
 		super();
 		ID_Eraikina = iD_Eraikina;
 		Izen_Luzea = izen_Luzea;
-		this.izen_Laburra = izen_Laburra;
+		this.Izen_Laburra = Izen_Laburra;
 		Helbidea = helbidea;
 		Posta_Kodea = posta_Kodea;
 		Sortu_Data = sortu_Data;
@@ -44,12 +44,12 @@ public class eraikina {
 
 
 	public String getIzen_Laburra() {
-		return izen_Laburra;
+		return Izen_Laburra;
 	}
 
 
 	public void setIzen_Laburra(String izen_Laburra) {
-		this.izen_Laburra = izen_Laburra;
+		this.Izen_Laburra = izen_Laburra;
 	}
 
 
