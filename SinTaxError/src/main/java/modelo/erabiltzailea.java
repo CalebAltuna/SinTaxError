@@ -4,12 +4,14 @@ public class erabiltzailea {
 	int ID_Erabiltzailea;
 	String Pasahitza;
 	String Rola;
+	String Izena;
 	
-	public erabiltzailea(int iD_Erabiltzailea, String pasahitza, String rola) {
+	public erabiltzailea(int ID_Erabiltzailea, String Pasahitza, String Rola, String Izena) {
 		super();
-		ID_Erabiltzailea = iD_Erabiltzailea;
-		Pasahitza = pasahitza;
-		Rola = rola;
+		ID_Erabiltzailea = this.ID_Erabiltzailea;
+		Pasahitza = this.Pasahitza;
+		Rola = this.Rola;
+		Izena= this.Izena;
 	}
 	
 	public int getID_Erabiltzailea() {
@@ -29,6 +31,12 @@ public class erabiltzailea {
 	}
 	public void setRola(String rola) {
 		Rola = rola;
+	}
+	public String getIzena() {
+		return Izena;
+	}
+	public void setIzena(String izena) {
+		Izena = izena;
 	}
 	
 	
