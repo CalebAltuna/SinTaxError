@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom">
-      <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="container d-flex flex-wrap align-items-center">
         <a href="/" class="d-flex mb-2 mb-lg-0 text-dark text-decoration-none">
           <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg" width="50%">
         </a>
@@ -22,7 +22,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Historikoa</a></li>
         </ul></center>
 
-        <div class="text-end">
+        <div class="text-end" style="margin-left: 32%">
           <button style="background-color: #35b5e6; border-color: #35b5e6;" type="button" class="btn btn-primary">Log-out</button>
         </div>
       </div>
