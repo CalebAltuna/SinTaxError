@@ -16,9 +16,10 @@ import java.util.logging.Logger;
 @WebServlet("/erabiltzaileakServlet")
 public class erabiltzaileaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = Logger.getLogger(erabiltzaileakServlet.class.getName());
+    private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());
 
-    public boolean recogerDatos(erabiltzailea erab) {
+    
+    public boolean compararDatos(erabiltzailea erab) {
         boolean vuelta = false;
         try {
             String nombreBD = erabiltzaileaDAO.izenaBai(erab.getIzena());
@@ -49,7 +50,7 @@ public class erabiltzaileaServlet extends HttpServlet {
         
         erabiltzailea erab= new erabiltzailea(idErabiltzailea, username, password, rola);
 
-        if (recogerDatos(erab)) {
+        if (compararDatos(erab)) {
             response.sendRedirect("AdminDB1.jsp");
         } else {
             request.setAttribute("error", "Invalid username or password");
