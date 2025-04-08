@@ -2,9 +2,6 @@
 html, body {
     height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
@@ -28,7 +25,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background: #35b5e6;
     color: white;
     border: none;
     border-radius: 5px;
@@ -39,26 +36,14 @@ button {
 }
 
 button:hover {
-    background: #0056b3;
+    background:  #35b5e6;
 }
 h1{
 	    color: black;
 	text-align: center;
 }
-header {
-    background: #007BFF;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-outline: 2px solid black; /* Added outline */
-background-image: url("file:///C:/Users/web24cvalls/Downloads/headerPNG.png");
-}
 footer {
-		background: #007BFF;
+		background:  #35b5e6;
 			color: white;
 			padding: 10px 0;
 			text-align: center;
