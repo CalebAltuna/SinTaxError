@@ -52,7 +52,6 @@ public class erabiltzaileakServlet extends HttpServlet {
             request.setAttribute("error", "Invalid username or password");
             RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
             dispatcher.forward(request, response);
-
         }
     }
 }
