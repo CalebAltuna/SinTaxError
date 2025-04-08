@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="NewFile.css/">
+<link rel="stylesheet" href="../NewFile.css">
 <meta charset="UTF-8">
 <title>Erabiltzaileak</title>
 </head>
