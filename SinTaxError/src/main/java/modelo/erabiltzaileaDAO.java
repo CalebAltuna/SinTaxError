@@ -1,11 +1,29 @@
 package modelo;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Connection;
 public class erabiltzaileaDAO {
-    public void sortuErab(erabiltzailea erab) {
+	private final String SELECT_USER="SELECT * FROM usuarios.sintaxerror";
+	private final String CREATE_USER="INSERT INTO usuarios.sintaxerror (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
+	private final String DELETE_USER="DELETE FROM usuarios.sintaxerror WHERE ID_Erabiltzailea=?";
+	private final String UPDATE_USER="UPDATE usuarios SET Pasahitza=?, Rola=?, Izena=? WHERE ID_Erabiltzailea=?";
+    
+	public void irakurriErab() {
+		try {
+			Connection conn = DBconnection.connect();
+			String sql = SELECT_USER;
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.executeQuery();
+			DBconnection.desconnect();
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+	}
+
+	public void sortuErab(erabiltzailea erab) {
         try {
             Connection conn = DBconnection.connect();
-            String sql = "INSERT INTO usuarios (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
+            String sql = CREATE_USER;
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1, erab.getID_Erabiltzailea());
             pst.setString(2, erab.getIzena());
@@ -20,7 +38,7 @@ public class erabiltzaileaDAO {
 	public void kenduErab(int id) {
 		try {
 			Connection conn = DBconnection.connect();
-			String sql = "DELETE FROM usuarios WHERE ID_Erabiltzailea=?";
+			String sql = DELETE_USER;
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			pst.execute();
@@ -33,7 +51,7 @@ public class erabiltzaileaDAO {
 	public void eguneratuErab(erabiltzailea erab) {
 		try {
 			Connection conn = DBconnection.connect();
-			String sql = "UPDATE usuarios SET Pasahitza=?, Rola=?, Izena=? WHERE ID_Erabiltzailea=?";
+			String sql =UPDATE_USER;
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, erab.getPasahitza());
 			pst.setString(2, erab.getRola());
@@ -45,4 +63,43 @@ public class erabiltzaileaDAO {
 			System.out.println("Error: " + e.getMessage());
 		}
 	}
+    public static String izenaBai(String sartutakoIzena) {
+        String izenaOk = null;
+        try {
+            Connection conn = DBconnection.connect();
+            String sqlSententzia = "SELECT nombre FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
+            PreparedStatement pst = conn.prepareStatement(sqlSententzia);
+            pst.setString(1, sartutakoIzena);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                izenaOk = rs.getString("nombre");
+            }
+            rs.close();
+            pst.close();
+            DBconnection.desconnect();
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        return izenaOk;
+    }
+
+    public static String pasahitzaBai(String sartutakoPasahitza) {
+        String pasahitza = null;
+        try {
+            Connection conn = DBconnection.connect();
+            String sqlSententzia = "SELECT password FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
+            PreparedStatement pst = conn.prepareStatement(sqlSententzia);
+            pst.setString(1, sartutakoPasahitza);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                pasahitza = rs.getString("password");
+            }
+            rs.close();
+            pst.close();
+            DBconnection.desconnect();
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        return pasahitza;
+    }
 }

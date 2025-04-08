@@ -29,7 +29,7 @@
     </header>
 <center><div class="login-container">
         <h2>Login</h2>
-        <form action="erabiltzaileakServlet" method="post">
+        <form action="erabiltzaileaServlet" method="post">
             <input type="text" name="username" placeholder="Usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <button style="width: 40%" type="submit" value="enviar">Ingresar</button>

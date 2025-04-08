@@ -1,9 +1,9 @@
-/*
+
 package controlador;
 
 import java.io.IOException;
-import modelo.erabiltzaileakDAO;
-import modelo.erabiltzaileak;
+import modelo.erabiltzaileaDAO;
+import modelo.erabiltzailea;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,20 +14,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @WebServlet("/erabiltzaileakServlet")
-public class erabiltzaileakServlet extends HttpServlet {
+public class erabiltzaileaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = Logger.getLogger(erabiltzaileakServlet.class.getName());
+    private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());
 
-    public boolean recogerDatos(erabiltzaileak erabiltzailea) {
+    
+    public boolean compararDatos(erabiltzailea erab) {
         boolean vuelta = false;
         try {
-            String nombreBD = erabiltzaileakDAO.devolverNombreBaseDeDatos(erabiltzailea.getIzena());
-            String passwordBD = erabiltzaileakDAO.devolverPasswordBaseDeDatos(erabiltzailea.getIzena());
+            String nombreBD = erabiltzaileaDAO.izenaBai(erab.getIzena());
+            String passwordBD = erabiltzaileaDAO.pasahitzaBai(erab.getIzena());
 
             logger.log(Level.INFO, "NombreBD: {0}, PasswordBD: {1}", new Object[]{nombreBD, passwordBD});
-            logger.log(Level.INFO, "NombreUsuario: {0}, PasswordUsuario: {1}", new Object[]{erabiltzailea.getIzena(), erabiltzailea.getPasahitza()});
+            logger.log(Level.INFO, "NombreUsuario: {0}, PasswordUsuario: {1}", new Object[]{erab.getIzena(), erab.getPasahitza()});
 
-            if (nombreBD != null && passwordBD != null && erabiltzailea.getIzena().equals(nombreBD) && erabiltzailea.getPasahitza().equals(passwordBD)) {
+            if (nombreBD != null && passwordBD != null && erab.getIzena().equals(nombreBD) && erab.getPasahitza().equals(passwordBD)) {
                 vuelta = true;
             }
         } catch (NullPointerException e) {
@@ -41,12 +42,15 @@ public class erabiltzaileakServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String username = request.getParameter("izena");
+        String password = request.getParameter("pasahitza");
+        String rola = request.getParameter("rola");
+        String id = request.getParameter("id");
+        int idErabiltzailea = Integer.parseInt(id);
+        
+        erabiltzailea erab= new erabiltzailea(idErabiltzailea, username, password, rola);
 
-        erabiltzaileak erabiltzaile = new erabiltzaileak(username, password);
-
-        if (recogerDatos(erabiltzaile)) {
+        if (compararDatos(erab)) {
             response.sendRedirect("AdminDB1.jsp");
         } else {
             request.setAttribute("error", "Invalid username or password");
@@ -55,4 +59,3 @@ public class erabiltzaileakServlet extends HttpServlet {
         }
     }
 }
-*/
