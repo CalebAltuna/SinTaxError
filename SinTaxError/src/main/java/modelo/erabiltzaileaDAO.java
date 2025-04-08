@@ -4,7 +4,7 @@ import java.sql.Connection;
 public class erabiltzaileaDAO {
     public void sortuErab(erabiltzailea erab) {
         try {
-            Connection conn = DBconnection.getConnection();
+            Connection conn = DBconnection.connect();
             String sql = "INSERT INTO usuarios (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1, erab.getID_Erabiltzailea());
@@ -12,19 +12,19 @@ public class erabiltzaileaDAO {
             pst.setString(3, erab.getPasahitza());
             pst.setString(4, erab.getRola());
             pst.execute();
-            DBconnection.desConnection();
+            DBconnection.desconnect();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
 	public void kenduErab(int id) {
 		try {
-			Connection conn = DBconnection.getConnection();
+			Connection conn = DBconnection.connect();
 			String sql = "DELETE FROM usuarios WHERE ID_Erabiltzailea=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			pst.execute();
-			DBconnection.desConnection();
+			DBconnection.desconnect();
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
@@ -32,7 +32,7 @@ public class erabiltzaileaDAO {
 
 	public void eguneratuErab(erabiltzailea erab) {
 		try {
-			Connection conn = DBconnection.getConnection();
+			Connection conn = DBconnection.connect();
 			String sql = "UPDATE usuarios SET Pasahitza=?, Rola=?, Izena=? WHERE ID_Erabiltzailea=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, erab.getPasahitza());
@@ -40,7 +40,7 @@ public class erabiltzaileaDAO {
 			pst.setString(3, erab.getIzena());
 			pst.setInt(4, erab.getID_Erabiltzailea());
 			pst.execute();
-			DBconnection.desConnection();
+			DBconnection.desconnect();
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}

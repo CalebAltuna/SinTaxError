@@ -12,7 +12,7 @@ public class DBconnection {
     final String driver = "com.mysql.cj.jdbc.Driver";
     private static Connection conn = null;
 
-    public static Connection getConnection() {
+    public static Connection connect() {
         try {
             if (conn == null || conn.isClosed()) {
                 conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -23,7 +23,7 @@ public class DBconnection {
         }
         return conn;
     }
-    public static void desConnection() {
+    public static void desconnect() {
         try {
             if (conn != null && !conn.isClosed()) {
                 conn.close();

@@ -9,11 +9,9 @@
 </head>
 <body>
 <header>
-<h1>Erabiltzaileak</h1>
 <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg">
 </header>
-
-
+<h2>Erabiltzaileak</h2>
 
 
 <footer>
