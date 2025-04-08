@@ -19,7 +19,6 @@ public class erabiltzaileaDAO {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
 	public void kenduErab(int id) {
 		try {
 			Connection conn = DBconnection.getConnection();
