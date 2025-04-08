@@ -22,11 +22,9 @@ public class eraikina {
 		Sortu_Data = sortu_Data;
 	}
 
-
 	public int getID_Eraikina() {
 		return ID_Eraikina;
 	}
-
 
 	public void setID_Eraikina(int iD_Eraikina) {
 		ID_Eraikina = iD_Eraikina;
@@ -47,11 +45,9 @@ public class eraikina {
 		return Izen_Laburra;
 	}
 
-
 	public void setIzen_Laburra(String izen_Laburra) {
 		this.Izen_Laburra = izen_Laburra;
 	}
-
 
 	public String getHelbidea() {
 		return Helbidea;
@@ -62,28 +58,20 @@ public class eraikina {
 		Helbidea = helbidea;
 	}
 
-
 	public String getPosta_Kodea() {
 		return Posta_Kodea;
 	}
-
 
 	public void setPosta_Kodea(String posta_Kodea) {
 		Posta_Kodea = posta_Kodea;
 	}
 
-
 	public Date getSortu_Data() {
 		return Sortu_Data;
 	}
 
-
 	public void setSortu_Data(Date sortu_Data) {
 		Sortu_Data = sortu_Data;
 	}
-    
-    
 	
 }
-
-
