@@ -27,8 +27,8 @@ public class loginServlet extends HttpServlet {
             return;
         }
 
-        // Simulate authentication (replace with database validation)
-        if ("admin".equals(izena) && "password".equals(pasahitza)) {
+        // Compare credentials
+        if (validarCredenciales(izena, pasahitza)) {
             // Successful login
             response.sendRedirect("AdminDB1.jsp");
         } else {
@@ -44,5 +44,10 @@ public class loginServlet extends HttpServlet {
         // Redirect to login page
         response.sendRedirect("Login.jsp");
     }
-    
+
+    // Method to validate credentials
+    private boolean validarCredenciales(String izena, String pasahitza) {
+        // Replace this logic with database validation if needed
+        return "admin".equals(izena) && "password".equals(pasahitza);
+    }
 }
