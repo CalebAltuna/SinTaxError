@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet("/loginServlet")
+@WebServlet("/Start/loginServlet")
 public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());
@@ -37,6 +37,10 @@ public class loginServlet extends HttpServlet {
             vuelta = false;
         }
         return vuelta;
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Redirect to the login page if a GET request is made
+        response.sendRedirect("login.jsp");
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String izena = request.getParameter("izena");
