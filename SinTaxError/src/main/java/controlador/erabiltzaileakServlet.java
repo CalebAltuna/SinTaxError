@@ -1,4 +1,4 @@
-/*
+
 package controlador;
 
 import java.io.IOException;
@@ -55,4 +55,3 @@ public class erabiltzaileakServlet extends HttpServlet {
         }
     }
 }
-*/
