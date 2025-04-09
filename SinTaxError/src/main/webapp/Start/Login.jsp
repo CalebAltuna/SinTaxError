@@ -26,7 +26,6 @@
 
 <center><div class="login-container">
         <h2>Login</h2>
-
 		<form action="/SinTaxError/Start/loginServlet" method="post">
             <input type="text" name="izena" placeholder="Usuario" required>
             <input type="password" name="pasahitza" placeholder="Contraseña" required>
@@ -38,6 +37,5 @@
 	<p>@Miguel Altuna 2025</p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-	
 </body>
 </html>
