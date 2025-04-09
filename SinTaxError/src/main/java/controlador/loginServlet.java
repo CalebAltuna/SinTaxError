@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet("/loginServlet")
+@WebServlet("/Start/loginServlet")
 public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());
@@ -24,17 +24,17 @@ public class loginServlet extends HttpServlet {
             String nombreBD = erabiltzaileaDAO.izenaBai(erab.getIzena());
             String passwordBD = erabiltzaileaDAO.pasahitzaBai(erab.getIzena());
 
-            logger.log(Level.INFO, "NombreBD: {0}, PasswordBD: {1}", new Object[]{nombreBD, passwordBD});
-            logger.log(Level.INFO, "NombreUsuario: {0}, PasswordUsuario: {1}", new Object[]{erab.getIzena(), erab.getPasahitza()});
+            logger.log(Level.INFO, "NombreBD: {1}, PasswordBD: {2}", new Object[]{nombreBD, passwordBD});
+            logger.log(Level.INFO, "NombreUsuario: {1}, PasswordUsuario: {2}", new Object[]{erab.getIzena(), erab.getPasahitza()});
 
             if (nombreBD != null && passwordBD != null && erab.getIzena().equals(nombreBD) && erab.getPasahitza().equals(passwordBD)) {
                 vuelta = true;
             }
         } catch (NullPointerException e) {
-            logger.log(Level.SEVERE, "NullPointerException: {0}", e.getMessage());
+            logger.log(Level.SEVERE, "NullPointerException: {1}", e.getMessage());
             vuelta = false;
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Exception: {0}", e.getMessage());
+            logger.log(Level.SEVERE, "Exception: {1}", e.getMessage());
             vuelta = false;
         }
         return vuelta;
