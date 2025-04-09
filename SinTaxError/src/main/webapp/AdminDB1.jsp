@@ -32,7 +32,7 @@ try{
 	
 	stm = conn.createStatement();
 	
-	String sententzia = "SELECT * FROM securedb.usuarios";
+	String sententzia = "SELECT * FROM sintaxerror.erabiltzailea";
 	
 	rst = stm.executeQuery(sententzia);
 
@@ -42,8 +42,8 @@ try{
 	<tr>
 		<th>ID</th>
 		<th>Izena</th>
-		<th>Email</th>
 		<th>Pasahitza</th>
+		<th>Rol</th>
 	</tr>
 
 <%
@@ -51,10 +51,10 @@ while(rst.next()){
 %>
 
 <tr>
-	<td><%= rst.getInt("id") %></td>
-    <td><%= rst.getString("nombre") %></td>
-    <td><%= rst.getString("email") %></td>
-    <td><%= rst.getString("password") %></td>
+	<td><%= rst.getInt("id_erabiltzailea") %></td>
+    <td><%= rst.getString("Izena") %></td>
+    <td><%= rst.getString("Pasahitza") %></td>
+    <td><%= rst.getString("Rola") %></td>
 </tr>
 
 <%
