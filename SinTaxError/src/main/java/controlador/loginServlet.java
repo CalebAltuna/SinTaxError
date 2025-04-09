@@ -26,11 +26,10 @@ public class loginServlet extends HttpServlet {
             dispatcher.forward(request, response);
             return;
         }
-
         // Compare credentials
         if (validarCredenciales(izena, pasahitza)) {
             // Successful login
-            response.sendRedirect("AdminDB1.jsp");
+            response.sendRedirect(request.getContextPath() + "/Start/AdminDB1.jsp");
         } else {
             // Failed login
             request.setAttribute("error", "Invalid username or password.");
@@ -38,7 +37,6 @@ public class loginServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Redirect to login page
