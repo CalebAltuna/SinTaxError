@@ -44,10 +44,9 @@ public class loginServlet extends HttpServlet {
         // Redirect to login page
         response.sendRedirect("Login.jsp");
     }
-
     // Method to validate credentials
     private boolean validarCredenciales(String izena, String pasahitza) {
         // Replace this logic with database validation if needed
-        return "admin".equals(izena) && "password".equals(pasahitza);
+        return "User".equals(izena) && "password".equals(pasahitza);
     }
 }
