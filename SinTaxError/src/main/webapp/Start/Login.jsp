@@ -13,17 +13,18 @@
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
       <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg" alt="Logo" style="height: 50px;">
     </a>
+<<<<<<< HEAD
     <ul class="nav justify-content-center flex-grow-1">
+=======
+
+    <ul style="margin-left: -7%" class="nav justify-content-center flex-grow-1">
+>>>>>>> branch 'master' of https://github.com/CalebAltuna/SinTaxError.git
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Eraikina</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gela</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gailua</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Erabiltzaileak</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Historikoa</a></li>
     </ul>
-
-    <div>
-      <button type="button" class="btn btn-primary" style="background-color: #35b5e6; border-color: #35b5e6;">Log-out</button>
-    </div>
   </div>
 </header>
 
