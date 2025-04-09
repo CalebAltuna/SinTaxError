@@ -63,43 +63,20 @@ public class erabiltzaileaDAO {
 			System.out.println("Error: " + e.getMessage());
 		}
 	}
-    public static String izenaBai(String sartutakoPassword) {
-        String izenaOk = null;
-        try {
-            Connection conn = DBconnection.connect();
-            String sqlSententzia = "SELECT nombre FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
-            PreparedStatement pst = conn.prepareStatement(sqlSententzia);
-            pst.setString(1, sartutakoPassword);
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-                izenaOk = rs.getString("nombre");
-            }
-            rs.close();
-            pst.close();
-            DBconnection.desconnect();
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
+    public static String erabIzenaOK(String izena) {
+        // Replace with actual database logic
+        if ("User".equals(izena)) {
+            return "User";
         }
-        return izenaOk;
+        return null;
     }
 
-    public static String pasahitzaBai(String sartutakoErab) {
-        String pasahitza = null;
-        try {
-            Connection conn = DBconnection.connect();
-            String sqlSententzia = "SELECT pasahitza FROM sintaxerror.usuarios WHERE izena = ? LIMIT 1";
-            PreparedStatement pst = conn.prepareStatement(sqlSententzia);
-            pst.setString(1, sartutakoErab);
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-                pasahitza = rs.getString("password");
-            }
-            rs.close();
-            pst.close();
-            DBconnection.desconnect();
-        } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
+    public static String erabPasahitzaOK (String izena) {
+        // Replace with actual database logic
+        if ("User".equals(izena)) {
+            return "password";
         }
-        return pasahitza;
+        return null;
     }
+
 }

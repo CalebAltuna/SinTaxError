@@ -2,6 +2,9 @@
 package controlador;
 
 import java.io.IOException;
+
+import modelo.erabiltzailea;
+import modelo.erabiltzaileaDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,7 +15,24 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/Start/loginServlet")
 public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+    
+	public boolean recogerdatos(erabiltzailea erab) {
+		boolean vuelta = false;
+		try {
+			try {
+				if(erab.getIzena().equals(erabiltzaileaDAO.erabIzenaOK(erab.getIzena())) && erab.getPasahitza().equals(erabiltzaileaDAO.erabPasahitzaOK(erab.getIzena()))) {
+					vuelta = true;
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}catch(NullPointerException e) {
+			vuelta = false;
+		}
+		return vuelta;
+	}
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve form parameters
