@@ -26,7 +26,6 @@
 
 <center><div class="login-container">
         <h2>Login</h2>
-
 		<form action="/SinTaxError/Start/loginServlet" method="post">
             <input type="text" name="izena" placeholder="Usuario" required>
             <input type="password" name="pasahitza" placeholder="Contraseña" required>

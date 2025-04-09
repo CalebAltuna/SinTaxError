@@ -42,21 +42,23 @@ public class loginServlet extends HttpServlet {
         // Redirect to the login page if a GET request is made
         response.sendRedirect("login.jsp");
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String izena = request.getParameter("izena");
-        String pasahitza = request.getParameter("pasahitza");
-        String rola = request.getParameter("rola");
-        String id = request.getParameter("id");
-        int idErabiltzailea = Integer.parseInt(id);
-        
-        erabiltzailea erab= new erabiltzailea(idErabiltzailea, izena, pasahitza, rola);
 
-        if (compararDatos(erab)) {
-            response.sendRedirect("SinTaxError/Start/AdminDB1.jsp");
-        } else {
-            request.setAttribute("error", "Invalid username or password");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SinTaxError/Start/Login.jsp");
-            dispatcher.forward(request, response);
-        }
-    }
+@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    String izena = request.getParameter("izena");
+	    String pasahitza = request.getParameter("pasahitza");
+	    String rola = request.getParameter("rola");
+	    String id = request.getParameter("id");
+	    int idErabiltzailea = Integer.parseInt(id);
+	
+	    erabiltzailea erab = new erabiltzailea(idErabiltzailea, izena, pasahitza, rola);
+	
+	    if (compararDatos(erab)) {
+	        response.sendRedirect("AdminDB1.jsp");
+	    } else {
+	        request.setAttribute("error", "Invalid username or password");
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("Start/Login.jsp");
+	        dispatcher.forward(request, response);
+	    }
+	}
 }//end
