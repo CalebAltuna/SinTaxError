@@ -14,9 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @WebServlet("/erabiltzaileaServlet")
-/*
- * Servlet implementation class loginServlet
- */
 public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger logger = Logger.getLogger(erabiltzaileaServlet.class.getName());

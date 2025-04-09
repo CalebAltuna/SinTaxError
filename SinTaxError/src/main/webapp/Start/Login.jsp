@@ -30,10 +30,10 @@
 
 <center><div class="login-container">
         <h2>Login</h2>
-        <form action="erabiltzaileaServlet" method="post">
+        <form action="loginServlet" method="post">
             <input type="text" name="izena" placeholder="Usuario" required>
             <input type="password" name="pasahitza" placeholder="Contraseña" required>
-            <button style="width: 40%" type="submit" value="enviar">Ingresar</button>
+            <input style="width: 40%" type="submit" value="enviar">Ingresar</button>
         </form>
 </div></center>
 <footer>
