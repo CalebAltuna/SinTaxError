@@ -13,7 +13,7 @@
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
       <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg" alt="Logo" style="height: 50px;">
     </a>
-
+    <ul class="nav justify-content-center flex-grow-1">
     <ul style="margin-left: -7%" class="nav justify-content-center flex-grow-1">
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Eraikina</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gela</a></li>
@@ -26,10 +26,10 @@
 
 <center><div class="login-container">
         <h2>Login</h2>
-        <form action="erabiltzaileaServlet" method="post">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button style="width: 40%" type="submit" value="enviar">Ingresar</button>
+        <form action="loginServlet" method="post">
+            <input type="text" name="izena" placeholder="Usuario" required>
+            <input type="password" name="pasahitza" placeholder="Contraseña" required>
+            <input style="width: 40%" type="submit" value="enviar">Ingresar</button>
         </form>
 </div></center>
 <footer>

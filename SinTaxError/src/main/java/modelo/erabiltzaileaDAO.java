@@ -63,13 +63,13 @@ public class erabiltzaileaDAO {
 			System.out.println("Error: " + e.getMessage());
 		}
 	}
-    public static String izenaBai(String sartutakoIzena) {
+    public static String izenaBai(String sartutakoPassword) {
         String izenaOk = null;
         try {
             Connection conn = DBconnection.connect();
             String sqlSententzia = "SELECT nombre FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
             PreparedStatement pst = conn.prepareStatement(sqlSententzia);
-            pst.setString(1, sartutakoIzena);
+            pst.setString(1, sartutakoPassword);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 izenaOk = rs.getString("nombre");
@@ -83,13 +83,13 @@ public class erabiltzaileaDAO {
         return izenaOk;
     }
 
-    public static String pasahitzaBai(String sartutakoPasahitza) {
+    public static String pasahitzaBai(String sartutakoErab) {
         String pasahitza = null;
         try {
             Connection conn = DBconnection.connect();
-            String sqlSententzia = "SELECT pasahitza FROM securedb.usuarios WHERE nombre = ? LIMIT 1";
+            String sqlSententzia = "SELECT pasahitza FROM sintaxerror.usuarios WHERE izena = ? LIMIT 1";
             PreparedStatement pst = conn.prepareStatement(sqlSententzia);
-            pst.setString(1, sartutakoPasahitza);
+            pst.setString(1, sartutakoErab);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 pasahitza = rs.getString("password");

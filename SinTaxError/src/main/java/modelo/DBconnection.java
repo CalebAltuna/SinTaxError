@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DBconnection {
     private static final String USER = "root";
     private static final String PASSWORD = "12345678";
-    private static final String URL = "jdbc:mysql://localhost:3306/securedb";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/sintaxerror";
     final String driver = "com.mysql.cj.jdbc.Driver";
     private static Connection conn = null;
 
