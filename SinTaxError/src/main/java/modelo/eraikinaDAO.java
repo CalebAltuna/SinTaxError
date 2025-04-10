@@ -13,7 +13,7 @@ public class eraikinaDAO {
 			pst.setString(4, eraikin.getHelbidea());
 			pst.setDate(5, eraikin.getSortu_Data());
 			pst.execute();
-			DBconnection.desconnect();
+			DBconnection.connect();
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
