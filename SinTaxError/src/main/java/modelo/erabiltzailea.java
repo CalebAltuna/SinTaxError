@@ -14,6 +14,10 @@ public class erabiltzailea {
 		Izena= this.Izena;
 	}
 	
+	public erabiltzailea() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getID_Erabiltzailea() {
 		return ID_Erabiltzailea;
 	}
