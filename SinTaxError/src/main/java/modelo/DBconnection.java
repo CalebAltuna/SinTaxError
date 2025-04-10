@@ -6,34 +6,33 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBconnection {
-    private static final String USER = "root";
-    private static final String PASSWORD = "12345678";
-    private static final String URL = "jdbc:mysql://127.0.0.1/sintaxerror";
-    final String driver = "com.mysql.cj.jdbc.Driver";
-    
-    private static Connection conn = null;
+    private static final String USER = System.getenv("DB_USER"); // Usar variables de entorno
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
+    private static final String URL = System.getenv("DB_URL");
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public static Connection connect() {
+        Connection conn = null;
         try {
-            if (conn == null || conn.isClosed()) {
-                conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("Konektatuta zaude");
-            }
+            Class.forName(DRIVER); // Cargar el driver
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Conexión exitosa a la base de datos.");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Error: Driver no encontrado - " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.err.println("Error al conectar a la base de datos - " + e.getMessage());
         }
         return conn;
     }
-    public static void desconnect() {
+
+    public static void disconnect(Connection conn) {
         try {
             if (conn != null && !conn.isClosed()) {
                 conn.close();
-                System.out.println("Conexion cerrada");
-            } else {
-                System.out.println("La conexion no esta abierta");
+                System.out.println("Conexión cerrada correctamente.");
             }
         } catch (SQLException e) {
-            System.out.println("Ha ocurrido un problema al cerrar la conexion");
+            System.err.println("Error al cerrar la conexión - " + e.getMessage());
         }
     }
 }
