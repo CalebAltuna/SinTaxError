@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<title>MySQL konexioa</title>
+<title>Erab View</title>
 <link rel="stylesheet" href="../NewFile.css">
 </head>
 <body>
