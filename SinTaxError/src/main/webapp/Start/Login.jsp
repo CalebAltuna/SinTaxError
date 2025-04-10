@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,15 +23,14 @@
     </ul>
   </div>
 </header>
-
 <form action="/SinTaxError/Start/loginServlet" method="post">
     <input type="text" name="izena" placeholder="Usuario" required>
     <input type="password" name="pasahitza" placeholder="Contraseña" required>
     <input style="width: 40%" type="submit" value="enviar"></input>
 </form>
-<c:if test="${not empty error}">
     <div class="alert alert-danger">${error}</div>
-</c:if>
+    
+    
 <footer>
 	<p>By SinTaxError</p>
 	<p>@Miguel Altuna 2025</p>

@@ -1,9 +1,6 @@
-
 package controlador;
 
 import java.io.IOException;
-
-import modelo.erabiltzailea;
 import modelo.erabiltzaileaDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,57 +11,35 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/Start/loginServlet")
 public class loginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    
-	public boolean recogerdatos(erabiltzailea erab) {
-		boolean vuelta = false;
-		try {
-			try {
-				if(erab.getIzena().equals(erabiltzaileaDAO.erabIzenaOK(erab.getIzena())) && erab.getPasahitza().equals(erabiltzaileaDAO.erabPasahitzaOK(erab.getIzena()))) {
-					vuelta = true;
-				}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}catch(NullPointerException e) {
-			vuelta = false;
-		}
-		return vuelta;
+	    private static final long serialVersionUID = 1L;
+	
+	    @Override
+	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        String izena = request.getParameter("izena");
+	        String pasahitza = request.getParameter("pasahitza");
+	
+	        if (izena == null || izena.isEmpty() || pasahitza == null || pasahitza.isEmpty()) {
+	            request.setAttribute("error", "Erabiltzaile izena eta pasahitza beharrezkoak dira.");
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("/Start/Login.jsp");
+	            dispatcher.forward(request, response);
+	            return;
+	        }
+	
+	        if (validarCredenciales(izena, pasahitza)) {
+	            response.sendRedirect(request.getContextPath() +"/Start/AdminDB1.jsp");
+	        } else {
+	            request.setAttribute("error", "Erabiltzaile izena edo pasahitza ez da zuzena.");
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("/Start/Login.jsp");
+	            dispatcher.forward(request, response);
+	        }
+	    }
+	
+	    @Override
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	        response.sendRedirect("Login.jsp");
+	    }
+	
+	    private boolean validarCredenciales(String izena, String pasahitza) {
+	        return erabiltzaileaDAO.validar(izena, pasahitza);
+	    }
 	}
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve form parameters
-        String izena = request.getParameter("izena");
-        String pasahitza = request.getParameter("pasahitza");
-
-        // Validate input
-        if (izena == null || izena.isEmpty() || pasahitza == null || pasahitza.isEmpty()) {
-            request.setAttribute("error", "Username and password are required.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Start/Login.jsp");
-            dispatcher.forward(request, response);
-            return;
-        }
-        // Compare credentials
-        if (validarCredenciales(izena, pasahitza)) {
-            // Successful login
-            response.sendRedirect(request.getContextPath() + "/Start/AdminDB1.jsp");
-        } else {
-            // Failed login
-            request.setAttribute("error", "Invalid username or password.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Start/Login.jsp");
-            dispatcher.forward(request, response);
-        }
-    }
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Redirect to login page
-        response.sendRedirect("Login.jsp");
-    }
-    // Method to validate credentials
-    private boolean validarCredenciales(String izena, String pasahitza) {
-        // Replace this logic with database validation if needed
-        return "User".equals(izena) && "password".equals(pasahitza);
-    }
-}
