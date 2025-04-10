@@ -52,7 +52,6 @@ footer {
 			z-index: 1000;
 }
 
-#botones{
-	margin-left: 88%;
-	margin-right: 2%;
+#buttonOperar{
+	width: 30%;
 }

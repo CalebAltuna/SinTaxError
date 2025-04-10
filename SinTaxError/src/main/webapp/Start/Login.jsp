@@ -13,7 +13,6 @@
     <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
       <img src="https://www.fpdebagoienalh.com/wp-content/uploads/2020/10/miguel-altuna-logo.jpg" alt="Logo" style="height: 50px;">
     </a>
-    <ul class="nav justify-content-center flex-grow-1">
     <ul style="margin-left: -7%" class="nav justify-content-center flex-grow-1">
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Eraikina</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gela</a></li>

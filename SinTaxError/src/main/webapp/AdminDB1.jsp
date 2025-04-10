@@ -88,11 +88,11 @@ catch(Exception e){
 %>
 <div id="botones">
 	<br>
-	<button type="button">Crear</button>
+	<button id="buttonOperar" type="button">Crear</button>
 	<br>
-	<button type="button">Editar</button>
+	<button id="buttonOperar" type="button">Editar</button>
 	<br>
-	<button type="button">Eliminar</button>
+	<button id="buttonOperar" type="button">Eliminar</button>
 </div>
 <footer>
 		<p>By SinTaxError</p>
