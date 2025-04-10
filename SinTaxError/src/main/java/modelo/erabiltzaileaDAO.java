@@ -94,7 +94,7 @@ public class erabiltzaileaDAO {
 			}
 		}
 	}
-
+	
 	public static boolean validar(String izena, String pasahitza) {
 		Connection conn = null;
 		PreparedStatement pst = null;

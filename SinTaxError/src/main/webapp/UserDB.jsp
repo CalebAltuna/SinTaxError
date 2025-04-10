@@ -16,7 +16,7 @@
 </ul>
 
 </header>
-<h1>AdminDB VIEW</h1>
+<h1>USER VIEW</h1>
 <footer>
 <p>By SinTaxError</p>
 <p>@Miguel Altuna 2025</p>
