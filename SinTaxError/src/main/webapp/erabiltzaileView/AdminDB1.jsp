@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <title>MySQL konexioa</title>
-<link rel="stylesheet" href="NewFile.css">
+<link rel="stylesheet" href="erabiltzeaView/NewFile.css">
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom">
