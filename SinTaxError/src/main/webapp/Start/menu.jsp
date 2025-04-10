@@ -15,7 +15,7 @@
     </a>
 
     <ul class="nav justify-content-center flex-grow-1">
-      <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Eraikina</a></li>
+      <li class="nav-item"><a href=" class="nav-link px-3 link-dark">Eraikina</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gela</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gailua</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Erabiltzaileak</a></li>
@@ -27,11 +27,7 @@
     </div>
   </div>
 </header>
-
-    <button value="Erabiltzailea"></button>
-    <button value="Eraikina"></button>
-    <button value="Eraikina"></button>
-    <button value="Eraikina"></button>
+<h1> ONGI ETORRI</h1>
 <footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>
