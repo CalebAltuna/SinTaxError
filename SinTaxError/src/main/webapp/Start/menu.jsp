@@ -32,6 +32,7 @@
     <button value="Eraikina"></button>
     <button value="Eraikina"></button>
     <button value="Eraikina"></button>
+    
 <footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>
