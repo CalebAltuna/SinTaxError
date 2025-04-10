@@ -6,7 +6,7 @@ html, body {
     background-color: #ffffff;
 }
 
-.login-container {
+#login {
     background:	#ffffff;
     padding: 20px;
     border-radius: 5px;
@@ -54,4 +54,9 @@ footer {
 
 #buttonOperar{
 	width: 30%;
+}
+
+#alerta{
+	margin-left: 40%;
+	margin-right: 40%;
 }

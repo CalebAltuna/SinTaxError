@@ -23,11 +23,14 @@
   </div>
 </header>
 <form action="/SinTaxError/Start/loginServlet" method="post">
+<center><div id="login">
     <input type="text" name="izena" placeholder="Usuario" required>
     <input type="password" name="pasahitza" placeholder="Contraseña" required>
     <input style="width: 40%" type="submit" value="enviar"></input>
+</div></center>
 </form>
-    <div class="alert alert-danger">${error}</div>
+<br>
+    <div id="alerta" class="alert alert-danger">${error}</div>
     
 <footer>
 	<p>By SinTaxError</p>
