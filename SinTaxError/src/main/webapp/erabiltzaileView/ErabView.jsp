@@ -1,4 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="modelo.erabiltzailea" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,23 +31,6 @@
   </div>
 </header>
 
-<%@ page import="java.sql.*"%>
-
-<%
-Connection conn = null;
-Statement stm = null;
-ResultSet rst = null;
-
-try{
-    Class.forName("com.mysql.cj.jdbc.Driver"); // Asegúrate de tener el driver de MySQL
-
-    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sintaxerror", "user", "password");
-
-    stm = conn.createStatement();
-    String query = "SELECT * FROM sintaxerror.erabiltzailea";
-    rst = stm.executeQuery(query);
-%>
-
 <div class="container">
   <h2 class="my-4">Erabiltzaileen Zerrenda</h2>
   <table class="table table-striped table-bordered">
@@ -59,32 +45,27 @@ try{
     </thead>
     <tbody>
 <%
-while(rst.next()) {
+    List<erabiltzailea> erabiltzaileak = (List<erabiltzailea>) request.getAttribute("erabiltzaileak");
+    if (erabiltzaileak != null) {
+        for (erabiltzailea erab : erabiltzaileak) {
 %>
       <tr>
-        <td><%= rst.getInt("id_erabiltzailea") %></td>
-        <td><%= rst.getString("Izena") %></td>
-        <td><%= rst.getString("Pasahitza") %></td>
-        <td><%= rst.getString("Rola") %></td>
+        <td><%= erab.getID_Erabiltzailea() %></td>
+        <td><%= erab.getIzena() %></td>
+        <td><%= erab.getPasahitza() %></td>
+        <td><%= erab.getRola() %></td>
         <td>
-          <a href="editErabiltzailea.jsp?id=<%= rst.getInt("id_erabiltzailea") %>" class="btn btn-warning btn-sm">Editatu</a>
-          <a href="deleteErabiltzailea.jsp?id=<%= rst.getInt("id_erabiltzailea") %>" class="btn btn-danger btn-sm">Ezabatu</a>
+          <a href="editErabiltzailea.jsp?id=<%= erab.getID_Erabiltzailea() %>" class="btn btn-warning btn-sm">Editatu</a>
+          <a href="deleteErabiltzailea.jsp?id=<%= erab.getID_Erabiltzailea() %>" class="btn btn-danger btn-sm">Ezabatu</a>
         </td>
       </tr>
 <%
-}
+        }
+    }
 %>
     </tbody>
   </table>
 </div>
-
-<%
-conn.close();
-}
-catch(Exception e){
-  out.println("<p>Error: " + e.getMessage() + "</p>");
-}
-%>
 
 <div class="container">
   <button id="createBtn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">Sortu Erabiltzailea</button>
