@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../NewFile.css">
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<title>menu</title>
+<title>menú</title>
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom">
@@ -29,7 +28,10 @@
   </div>
 </header>
 
-
+    <button value="Erabiltzailea"></button>
+    <button value="Eraikina"></button>
+    <button value="Eraikina"></button>
+    <button value="Eraikina"></button>
 <footer>
 		<p>By SinTaxError</p>
 		<p>@Miguel Altuna 2025</p>
