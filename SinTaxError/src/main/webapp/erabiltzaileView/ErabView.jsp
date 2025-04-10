@@ -31,12 +31,6 @@
 
 <%
 
-final String user = "root";
-final String password = "12345678";
-final String datubase_izena = "securedb";
-final String  url = "jdbc:mysql://127.0.0.1:3306/"+datubase_izena;
-final String driver = "com.mysql.cj.jdbc.Driver";
-
 Connection conn = null;
 Statement stm = null;
 ResultSet rst = null;
