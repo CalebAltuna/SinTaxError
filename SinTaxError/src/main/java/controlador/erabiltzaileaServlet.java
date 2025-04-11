@@ -24,11 +24,16 @@ public class erabiltzaileaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<erabiltzailea> lista = getErabiltzaileaDAO().getAll(); // Obtener los usuarios desde el DAO
-        request.setAttribute("erabiltzaileak", lista);  // Establecer los usuarios en el request
-        request.getRequestDispatcher("/erabiltzaileaView.jsp").forward(request, response); // Enviar a JSP
+        // Obtener los usuarios desde el DAO
+        List<erabiltzailea> lista = erabDAO.getAll();
+        
+        // Establecer los usuarios en el request
+        request.setAttribute("erabiltzaileak", lista);
+        
+        // Redirigir a la vista JSP que mostrará los usuarios
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/erabiltzaileaView.jsp");
+        dispatcher.forward(request, response);
     }
-}
 
     // **doPost()**: Para crear un nuevo usuario
     @Override
