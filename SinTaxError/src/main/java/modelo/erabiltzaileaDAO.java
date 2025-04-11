@@ -3,6 +3,11 @@ package modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class erabiltzaileaDAO {
 	private final String SELECT_USER = "SELECT * FROM tuff.erabiltzailea";
@@ -124,4 +129,35 @@ public class erabiltzaileaDAO {
 		}
 		return isValid;
 	}
+	public List<erabiltzailea> getAll() {
+	    List<erabiltzailea> lista = new ArrayList<>();
+	    String sql = "SELECT * FROM erabiltzaileak";
+
+	    try (Connection conn = DBconnection.connect();
+	         PreparedStatement stmt = conn.prepareStatement(sql);
+	         ResultSet rs = stmt.executeQuery()) {
+
+	        while (rs.next()) {
+	            erabiltzailea e = new erabiltzailea();
+	            e.setID_Erabiltzailea(rs.getInt("id"));
+	            e.setIzena(rs.getString("izena"));
+	            e.setPasahitza(rs.getString("pasahitza"));
+	            e.setRola(rs.getString("rola"));
+	            lista.add(e);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return lista;
+	}
+
+
+
+
+
+
+
+
+
+
 }

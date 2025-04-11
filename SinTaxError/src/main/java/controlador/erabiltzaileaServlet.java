@@ -1,5 +1,7 @@
 package controlador;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,6 +11,7 @@ import modelo.erabiltzailea;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/erabiltzaileaServlet")
 public class erabiltzaileaServlet extends HttpServlet {
@@ -18,20 +21,12 @@ public class erabiltzaileaServlet extends HttpServlet {
 
     // **doGet()**: Para leer los datos de un usuario
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String id = request.getParameter("id");
-        if (id != null) {
-            // Lógica para obtener un usuario por ID
-            // Aquí deberías llamar a la función correspondiente de la clase DAO (por ejemplo, irakurriErab())
-            // y devolver los resultados como JSON o HTML.
-            // Para este ejemplo, simplemente devolveremos un mensaje de que se ha recibido la solicitud.
-            PrintWriter out = response.getWriter();
-            out.println("GET request received for user with ID: " + id);
-        } else {
-            // Aquí puedes manejar la lectura de todos los usuarios si fuera necesario.
-            PrintWriter out = response.getWriter();
-            out.println("GET request received for all users.");
-        }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        erabiltzaileaDAO dao = new erabiltzaileaDAO();
+        List<erabiltzailea> lista = dao.getAll();
+        request.setAttribute("erabiltzaileak", lista);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("views/erabiltzaileak.jsp");
+        dispatcher.forward(request, response);
     }
 
     // **doPost()**: Para crear un nuevo usuario
@@ -52,36 +47,9 @@ public class erabiltzaileaServlet extends HttpServlet {
         // Responder con un mensaje
         response.getWriter().println("User created successfully.");
     }
+    
+    public class erabiltzaileaViewServlet extends HttpServlet {
 
-    // **doPut()**: Para actualizar un usuario existente
-    @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Obtener parámetros de la solicitud
-        int id = Integer.parseInt(request.getParameter("id"));
-        String pasahitza = request.getParameter("pasahitza");
-        String rola = request.getParameter("rola");
-        String izena = request.getParameter("izena");
-
-        // Crear un objeto de tipo "erabiltzailea" con los datos actualizados
-        erabiltzailea erab = new erabiltzailea(id, pasahitza, rola, izena);
-
-        // Llamada al método del DAO para actualizar el usuario
-        erabDAO.eguneratuErab(erab);
-
-        // Responder con un mensaje
-        response.getWriter().println("User updated successfully.");
     }
 
-    // **doDelete()**: Para eliminar un usuario
-    @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Obtener el ID del usuario a eliminar
-        int id = Integer.parseInt(request.getParameter("id"));
-
-        // Llamada al método del DAO para eliminar el usuario
-        erabDAO.kenduErab(id);
-
-        // Responder con un mensaje
-        response.getWriter().println("User deleted successfully.");
-    }
-}
+ }// End of class
