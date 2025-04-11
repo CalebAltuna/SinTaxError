@@ -1,14 +1,14 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="modelo.erabiltzailea" %>
+<%@ page import="controlador.erabiltzaileaServlet" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<stylesheet type="text/css" href="NewFile.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <title>Erabiltzailea - View</title>
-<link rel="stylesheet" href="../NewFile.css">
 </head>
 <body>
 <header class="py-3 mb-4 border-bottom">
@@ -45,7 +45,9 @@
     </thead>
     <tbody>
 <%
+    // Recuperar la lista de usuarios de los atributos de la solicitud
     List<erabiltzailea> erabiltzaileak = (List<erabiltzailea>) request.getAttribute("erabiltzaileak");
+
     if (erabiltzaileak != null) {
         for (erabiltzailea erab : erabiltzaileak) {
 %>
@@ -100,7 +102,7 @@
   </div>
 </div>
 
-<footer class="text-center py-4">
+<footer>
   <p>By SinTaxError</p>
   <p>@Miguel Altuna 2025</p>
 </footer>
