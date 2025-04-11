@@ -21,6 +21,7 @@ public class erabiltzaileaServlet extends HttpServlet {
 
     // **doGet()**: Para leer los datos de un usuario
     @Override
+<<<<<<< HEAD
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -32,6 +33,13 @@ public class erabiltzaileaServlet extends HttpServlet {
         
         // Redirigir a la vista JSP que mostrará los usuarios
         RequestDispatcher dispatcher = request.getRequestDispatcher("/erabiltzaileaView.jsp");
+=======
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        erabiltzaileaDAO dao = new erabiltzaileaDAO();
+        List<erabiltzailea> lista = dao.getAll();
+        request.setAttribute("erabiltzaileak", lista);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("views/erabiltzaileak.jsp");
+>>>>>>> branch 'master' of https://github.com/CalebAltuna/SinTaxError.git
         dispatcher.forward(request, response);
     }
 
