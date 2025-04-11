@@ -21,14 +21,13 @@ public class erabiltzaileaServlet extends HttpServlet {
 
     // **doGet()**: Para leer los datos de un usuario
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        List<erabiltzailea> lista = getErabiltzaileaDAO().getAll(); // Obtener los usuarios desde el DAO
-        request.setAttribute("erabiltzaileak", lista);  // Establecer los usuarios en el request
-        request.getRequestDispatcher("/erabiltzaileaView.jsp").forward(request, response); // Enviar a JSP
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        erabiltzaileaDAO dao = new erabiltzaileaDAO();
+        List<erabiltzailea> lista = dao.getAll();
+        request.setAttribute("erabiltzaileak", lista);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("views/erabiltzaileak.jsp");
+        dispatcher.forward(request, response);
     }
-}
 
     // **doPost()**: Para crear un nuevo usuario
     @Override
