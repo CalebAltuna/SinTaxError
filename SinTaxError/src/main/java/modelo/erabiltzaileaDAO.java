@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class erabiltzaileaDAO {
+	public erabiltzaileaDAO() {
+		super();
+	}
 	private final String SELECT_USER = "SELECT * FROM tuff.erabiltzailea";
 	private final String CREATE_USER = "INSERT INTO tuff.erabiltzailea (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
 	private final String DELETE_USER = "DELETE FROM tuff.erabiltzailea WHERE ID_Erabiltzailea=?";
