@@ -37,7 +37,7 @@ try{
 	
 	stm = conn.createStatement();
 	
-	String sententzia = "SELECT * FROM securedb.usuarios";
+	String sententzia = "SELECT * FROM tuff.erabiltzailea";
 	
 	rst = stm.executeQuery(sententzia);
 
