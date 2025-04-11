@@ -80,7 +80,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="createErabiltzailea.jsp" method="POST">
+        <form action="erabiltzaileaServlet" method="post">
           <div class="mb-3">
             <label for="izena" class="form-label">Izena</label>
             <input type="text" class="form-control" id="izena" name="izena" required>
