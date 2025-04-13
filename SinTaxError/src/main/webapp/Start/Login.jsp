@@ -24,8 +24,8 @@
 </header>
 <form action="/SinTaxError/Start/loginServlet" method="post">
 <center><div id="login">
-    <input type="text" name="izena" placeholder="Usuario" required>
-    <input type="password" name="pasahitza" placeholder="Contraseña" required>
+    <input type="text" name="izena" placeholder="Erabiltzailea" required>
+    <input type="password" name="pasahitza" placeholder="Pasahitza" required>
     <input style="width: 40%" type="submit" value="enviar"></input>
 </div></center>
 </form>
