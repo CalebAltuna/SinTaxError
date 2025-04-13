@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBconnection {
-    private static final String USER ="tuff";
-    private static final String PASSWORD ="37GMamA73WaG";
-    private static final String URL ="jdbc:mysql://192.168.0.51/tuff";
+    private static final String USER ="root";
+    private static final String PASSWORD ="12345678";
+    private static final String URL ="jdbc:mysql://localhost:/sintaxerror";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public static Connection connect() {

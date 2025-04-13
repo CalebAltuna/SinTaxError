@@ -10,10 +10,10 @@ import java.util.List;
 
 
 public class erabiltzaileaDAO {
-	private final String SELECT_USER = "SELECT * FROM tuff.erabiltzailea";
-	private final String CREATE_USER = "INSERT INTO tuff.erabiltzailea (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
-	private final String DELETE_USER = "DELETE FROM tuff.erabiltzailea WHERE ID_Erabiltzailea=?";
-	private final String UPDATE_USER = "UPDATE tuff.erabiltzailea SET Pasahitza=?, Rola=?, Izena=? WHERE ID_Erabiltzailea=?";
+	private final String SELECT_USER = "SELECT * FROM sintaxerror.erabiltzailea";
+	private final String CREATE_USER = "INSERT INTO sintaxerror.erabiltzailea (ID_Erabiltzailea,Pasahitza,Rola,Izena) VALUES (?,?,?,?)";
+	private final String DELETE_USER = "DELETE FROM sintaxerror.erabiltzailea WHERE ID_Erabiltzailea=?";
+	private final String UPDATE_USER = "UPDATE sintaxerror.erabiltzailea SET Pasahitza=?, Rola=?, Izena=? WHERE ID_Erabiltzailea=?";
 
 	public void irakurriErab() {
 		Connection conn = null;
@@ -108,7 +108,7 @@ public class erabiltzaileaDAO {
 
 		try {
 			conn = DBconnection.connect();
-			String sql = "SELECT izena FROM tuff.erabiltzailea WHERE izena=? AND pasahitza=?";
+			String sql = "SELECT izena FROM sintaxerror.erabiltzailea WHERE izena=? AND pasahitza=?";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, izena);
 			pst.setString(2, pasahitza);
