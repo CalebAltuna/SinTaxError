@@ -17,7 +17,7 @@
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Eraikina</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gela</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Gailua</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Erabiltzaileak</a></li>
+      <li class="nav-item"><a href="/erabiltzaileakView/ErabView" class="nav-link px-3 link-dark">Erabiltzaileak</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-3 link-dark">Historikoa</a></li>
     </ul>
   </div>
